@@ -1,0 +1,19 @@
+<div class="sidenav">
+  <%= link_to "タイムライン", chats_path %><hr>
+  <br>
+  <%= link_to "新規投稿", new_chat_path %><hr>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+  <% end %>
+  <br>
+  <%= link_to "ユーザー検索", users_path %><hr>
+  <br>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+</div>
+
+  <%= form_for @chat do |f| %>
+    <%= f.label :content %>
+    <%= f.text_field :content, :size => 140 %> 
+    <%= f.submit "編集する" %>
+  <% end %>

@@ -1,0 +1,2 @@
+module JsSampleHelper
+end

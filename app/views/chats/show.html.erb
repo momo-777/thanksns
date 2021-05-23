@@ -1,0 +1,72 @@
+<div class="sidenav">
+  <%= link_to "タイムライン", chats_path %><hr>
+  <br>
+  <%= link_to "新規投稿", new_chat_path %><hr>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+  <% end %>
+  <br>
+  <%= link_to "ユーザー検索", users_path %><hr>
+  <br>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+</div>
+
+<div class="detail">
+  <div class="chat">
+    <h3>投稿詳細</h3>
+      <p><%= @chat.mention %></p>
+      <p><%= @chat.content %></p>
+      <p><%= @chat.created_at %></p>
+      <hr>
+    <% if user_signed_in? %>
+      <% if current_user.already_liked?(@chat) %>
+        <%= link_to chat_like_path(@chat), method: :delete do %>
+
+          <i class="fas fa-heart"></i><%= @chat.likes.count %>
+        <% end %>
+    <% else %>
+
+        <%= link_to chat_likes_path(@chat), method: :post do %>
+          <i class="far fa-heart"></i><%= @chat.likes.count %>
+          <p>いいね</p><%= @chat.likes.count %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>いいねの数 = </p><%= @chat.likes.count %>
+        <i class="far fa-heart"></i><%= @chat.likes.count %>
+    <% end %>
+  </div>
+
+  <h4>いいねしたユーザー</h4>
+  <% @chat.liked_users.each do |user| %>
+    <li><%= user.name %></li>
+    <hr>
+  <% end %>
+
+  <div class="comment-wrapper">
+    <h4>コメント一覧</h4>
+    <% @comments.each do |c| %>
+      <div>
+        <%= c.user.name unless c.user.blank? %>
+        <br>
+        <%= c.content %>
+      </div>
+        <br>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= form_with(model: [@chat, @comment], local: true) do |f| %>
+        <%= f.text_area :content %>
+        <%= button_tag type: "submit" do %>
+          <i class="far fa-comments"></i> コメントする
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <hr>
+
+  <%= link_to "編集する", edit_chat_path(@chat.id) %>
+  <p><%= link_to "削除する", chat_path(@chat.id), method: :delete %></p><hr>
+  <%= link_to "←back", chats_path %>
+</div>

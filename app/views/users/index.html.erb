@@ -1,0 +1,27 @@
+<div class="sidenav">
+  <%= link_to "タイムライン", chats_path %><hr>
+  <br>
+  <%= link_to "新規投稿", new_chat_path %><hr>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+  <% end %>
+  <br>
+  <%= link_to "ユーザー検索", users_path %><hr>
+  <br>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+</div>
+
+<div class="user-search">
+  <h1>ユーザー検索</h1>
+
+  <%= form_tag({controller:"users",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索する'  %>
+  <% end %>
+
+  <% @users.each do |u| %>
+    <p><%= link_to u.name, user_path(u.id) %></p>
+  <% end %>
+</div>
+

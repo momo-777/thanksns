@@ -1,0 +1,51 @@
+// Place all the styles related to the introduction controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  header{
+    height: 60px;
+    background-color: #000;
+  }
+  
+  #以下マウスオーバー
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #f00;
+  }
+
+
+  
+  .first-block {
+    height: 500px;
+    background-color: #ddd;
+  }
+  
+  .second-block {
+    height: 500px;
+    background-color: #f0f0f0;
+  }
+  
+  .third-block {
+    height: 500px;
+    background-color: #f05f40;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 50px;
+    background-color: #000;
+    font-size: 15px;
+    color: #fff;
+  }

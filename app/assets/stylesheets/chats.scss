@@ -1,0 +1,57 @@
+// Place all the styles related to the chats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.chats-container{ 
+    margin-left:260px;
+    min-height:500px;
+    height:auto;
+    background-color:#ffffff;
+    margin-top:10px;
+    justify-content: space-between;
+
+     
+    }
+    
+.post{ 
+    margin-left:260px;
+    background-color:#ffffff;
+    margin-top:10px;
+    }
+
+.btn-circle-border-simple {
+    display: inline-block;
+    text-decoration: none;
+    color: #668ad8;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    border: solid 2px #668ad8;
+    text-align: center;
+    overflow: hidden;
+    font-weight: bold;
+    transition: .4s;
+    }
+      
+      .btn-circle-border-simple:hover {
+        background: #b3e1ff;
+      }
+
+.detail{ 
+    margin-left:260px;
+    background-color:#ffffff;
+    margin-top:10px;
+    }
+    
+.sidenav {
+    display: block;
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    background-color: #F0F0F0;
+    overflow-x: hidden;
+    padding-top: 0px;
+    border-right: 0.5px solid #F5B6AF;
+    }
+   

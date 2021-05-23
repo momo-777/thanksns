@@ -1,0 +1,47 @@
+<div class="sidenav">
+  <%= link_to "タイムライン", chats_path %><hr>
+  <br>
+  <%= link_to "新規投稿", new_chat_path %><hr>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+  <% end %>
+  <br>
+  <%= link_to "ユーザー検索", users_path %><hr>
+  <br>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+</div>
+
+<div class="post">
+  <h2>新規投稿</h2>
+
+  <%= form_for @chat do |f| %>
+    <div class="field">
+      <%= f.label :感謝したい相手_※必須 %><br>
+      <%= f.text_field :mention, :size => 30 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :メッセージ_※必須 %><br>
+      <%= f.text_field :content, :size => 100 %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :画像_※任意 %><br>
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="field">
+      <%= f.label :カードの色の選択_※任意 %><br>
+        <i class="fas fa-location-arrow" id="arrow-icon"></i>
+        <input type="color" class="arrow-icon-color-selector" id="arrow-icon-colorーselector" value="#e66465">
+
+    </div>
+
+    <br>
+    <%= f.submit "投稿する" %>
+    <br>
+
+  <% end %>
+  <%= link_to "←back", chats_path %>
+</div>

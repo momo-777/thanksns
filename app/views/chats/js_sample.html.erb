@@ -1,0 +1,27 @@
+<h1>問題</h1>
+<h3>Q1.今日は何月?</h3>
+
+
+<textarea name="" id="hoge" cols="30" rows="10"></textarea>
+
+<p><button onclick="clickButton()">回答する</button></p>
+
+<script>
+  function clickButton(){
+    const hoge = document.getElementById("hoge");
+    if (hoge.value==4) {
+        alert("正解");
+    }else{
+        alert("不正解");
+    }
+
+  }
+</script>
+
+今日は何曜日?
+<form>
+<label><input type="radio" name="fruit" value="orange"></label>
+<label><input type="radio" name="fruit" value="lemon" checked>レモン</label>
+<label><input type="radio" name="fruit" value="strawberry">ストロベリー</label>
+</form>
+

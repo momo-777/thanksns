@@ -1,0 +1,46 @@
+<div class="sidenav">
+  <%= link_to "タイムライン", chats_path %><hr>
+  <br>
+  <%= link_to "新規投稿", new_chat_path %><hr>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+  <% end %>
+  <br>
+  <%= link_to "ユーザー検索", users_path %><hr>
+  <br>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+</div>
+    
+<div class="mypage">
+  <h2>マイページ</h2>
+  <%= image_tag @user.image_url, size: "85x60" if @user.image? %> <%= @user.name %><%= render partial: 'relationships/follow_button', user: @user %>
+  <p>プロフィール</p>
+  <p><%= @user.profile %></p>
+
+  フォロー数<%= @user.followings.count %>
+  フォロワー数<%= @user.followers.count %>
+
+
+  <% if current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_registration_path %>
+  <% end %>
+
+  <h4>投稿一覧</h4>
+  <% @user.chats.each do |t| %>
+    <p><%= t.user.name %>
+    <p><%= t.content %>
+    <p><%= image_tag t.image_url, size: "150x105" if t.image? %>
+    <hr>
+  <% end %>
+
+
+  <h4>いいねした投稿</h4>
+  <% @user.liked_chats.each do |t| %>
+    <p><%= t.user.name %>
+    <p><%= t.content %>
+    <p><%= image_tag t.image_url, size: "150x105" if t.image? %>
+    <hr>
+  <% end %>
+  <p><%= link_to "←back", chats_path %></p>
+</div>
