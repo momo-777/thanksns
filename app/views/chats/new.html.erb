@@ -20,21 +20,38 @@
       <%= f.label :感謝したい相手_※必須 %><br>
       <%= f.text_field :mention, :size => 30 %>
     </div>
-
+    <br>
     <div class="field">
       <%= f.label :メッセージ_※必須 %><br>
       <%= f.text_field :content, :size => 100 %>
     </div>
-  
+    <br>
     <div class="field">
       <%= f.label :画像_※任意 %><br>
       <%= f.file_field :image %>
     </div>
-
+    <br>
+    
     <div class="field">
       <%= f.label :カードの色の選択_※任意 %><br>
-        <i class="fas fa-location-arrow" id="arrow-icon"></i>
-        <input type="color" class="arrow-icon-color-selector" id="arrow-icon-colorーselector" value="#e66465">
+        <form class="sample" id="bgChenge">
+            <label><input type="color" name="ex" id="bgColor" list="exlist" value="#ddeaf6">
+            <datalist id="exlist">
+              <option value="#ddd2aa"></option>
+              <option value="#ffe3d5"></option>
+              <option value="#d4ecad"></option>
+              <option value="#ddeaf6"></option>
+              <option value="#5888bd"></option>
+              <option value="#cdbbd3"></option>
+            </datalist></label>
+        </form>
+      <script>
+    var bgColor = document.getElementById('bgColor');
+  bgColor.onchange = function () {
+  document.getElementById('bgChenge').style.backgroundColor = this.value;
+  console.log('bgColor:'+this.value);
+}
+</script>
 
     </div>
 
@@ -43,5 +60,6 @@
     <br>
 
   <% end %>
+  <br>
   <%= link_to "←back", chats_path %>
 </div>

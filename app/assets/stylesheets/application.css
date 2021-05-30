@@ -53,4 +53,14 @@
     margin-right: 40px;
   }
   
+  /*210530に追記*/
+  a:link { 
+    color: black; 
+  } 
+  a:visited { 
+    color: black;
+  } 
+  a:hover { 
+    color: black;
+  } 
   

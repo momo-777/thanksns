@@ -23,5 +23,7 @@
   <% @users.each do |u| %>
     <p><%= link_to u.name, user_path(u.id) %></p>
   <% end %>
+
+  <%= link_to "←back", chats_path %>
 </div>
 

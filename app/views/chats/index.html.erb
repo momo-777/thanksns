@@ -1,53 +1,71 @@
 <div class="sidenav">
-  <%= link_to "タイムライン", chats_path %><hr>
+  <i class="fas fa-home"></i><%= link_to "タイムライン", chats_path %><hr>
   <br>
-  <%= link_to "新規投稿", new_chat_path %><hr>
+  <i class="fas fa-pen-fancy"></i><%= link_to "新規投稿", new_chat_path %><hr>
   <br>
   <% if user_signed_in? %>
-    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+    <i class="fas fa-user"></i><%= link_to "マイページ", user_path(current_user.id) %><hr>
   <% end %>
   <br>
-  <%= link_to "ユーザー検索", users_path %><hr>
+  <i class="fas fa-search-plus"></i><%= link_to "ユーザー検索", users_path %><hr>
   <br>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+  <i class="fas fa-sign-out-alt"></i><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
 </div>
 
-<div class="chats-container">
+<div class="timelineA">
   <h3>タイムライン</h3>
-  <% @chats.each do |t| %>
-    <div class="chat">
-      <%= image_tag t.user.image_url, size: "85x60" if t.user.image? %>
-        <a href="/users/<%= t.user.id %>"><%= t.user.name %></a><br><%= t.created_at %>
-        <p><%= t.mention %></p>
-        <p><%= t.content %></p>
-        <% if user_signed_in? %>
-          <% if current_user.already_liked?(t) %>
-            <%= link_to chat_like_path(id: t.id, chat_id: t.id), method: :delete do %>
-              <i class="fas fa-heart"></i><%= t.likes.count %>
-            <% end %>
-          <% else %>
-            <%= link_to chat_likes_path(id: t.id, chat_id: t.id), method: :post do %>
-              <i class="far fa-heart"></i><%= t.likes.count %>
-              <p><%= t.likes.count %>いいね</p>
-            <% end %>
-          <% end %>
-        <% else %>
-          <i class="far fa-heart"></i><%= t.likes.count %>
-        <% end %>
-
-        <p><%= link_to "詳細へ", chat_path(t.id) %></p>
-        <hr>
-    </div>
-  <% end %>
 </div>
- 
 
+<div class="timelineB">
+
+  <div class="post-conteiner">
 
   
+    <div class="each-post">
+      <% @chats.each do |t| %>
+        <div class="account-time">
+          <div class="icon">
+            <%= image_tag t.user.image_url, size: "70x70" if t.user.image? %>
+          </div>
+          <br><a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
+          <%= t.created_at %>
+          <end>
+        </div>
 
+        <div class="card">
+          <div class="mention">
+            <%= t.mention %>
+            <span class="mgl-20">に感謝！</span>
+          </div>
 
+          <div class="picture">
+            <%= image_tag t.image_url, size: "150x100" if t.image? %>
+          </div>
 
-
-
- 
-
+          <div class="message">
+            <p>---messege---</p>
+            <p><%= t.content %></p>
+          </div>
+        </div>
+        
+        <div class="favorites">
+          <% if user_signed_in? %>
+            <% if current_user.already_liked?(t) %>
+              <%= link_to chat_like_path(id: t.id, chat_id: t.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= t.likes.count %>
+              <% end %>
+            <% else %>
+              <%= link_to chat_likes_path(id: t.id, chat_id: t.id), method: :post do %>
+                <i class="far fa-heart"></i><%= t.likes.count %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <i class="far fa-heart"></i><%= t.likes.count %>
+          <% end %>
+          <span class="mgl-20A"><%= link_to "詳細へ", chat_path(t.id) %></span>
+        </div>
+        <hr>    
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,22 +2,114 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.chats-container{ 
-    margin-left:260px;
+.timelineA{
+    margin-top:10px;
+    margin-left:550px;
+    margin-right: 350px;
+    height:40px;
+    background-color:#fffbfb;
+    text-align: center;
+    vertical-align: middle;
+    background: #f4f4f4;
+    overflow-x: clip;
+    /*font-family: メイリオ;
+    font-weight: bold;*/
+}
+
+.post-conteiner{
+    margin-left:340px;
+    margin-right: 120px;
+    min-height:500px;
+    height:auto;
+    margin-top:10px;
+    justify-content: space-between; 
+    /*background: #fdeb9cd0;*/
+    border: solid 1px #1f1a2991;/*線*/
+    border-radius: 0px;/*角の丸み*/
+    background-color:#d3cfc525;
+    }
+
+/*.each-post{ 
+    margin-left:280px;
+    margin-right: 120px;
     min-height:500px;
     height:auto;
     background-color:#ffffff;
     margin-top:10px;
-    justify-content: space-between;
-
-     
-    }
+    justify-content: space-between; 
+    color: #2c2c2f;
+    background: #fdeb9cd0;
+    border-top: solid 5px #ffa807;
+    border-bottom: solid 5px #ffa807;
     
+    }*/
+
+.account-time{ 
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: 100%;
+    font-family: メイリオ;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.card{ 
+    background-color: #e599b0;
+    padding: 15px;
+    margin: 15px;
+    font-weight: bold;
+    border: solid 3px #8c60d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+.mention{ 
+    /*background-color: #f5d4a9;部分的なところ*/   
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #da3823e7;/*文字色*/
+    display: flex;
+    border-bottom: double 3px #03030365;
+}
+
+.picture{ 
+    background-color: black;
+    text-align:center;
+    border-radius: 50%;
+}
+
+.message{ 
+    background-color: #070707;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #060707;/*文字色*/
+    font-weight: bold;
+    background: #FFF;
+    border: solid 2px #03030365;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    text-align: center
+
+}
+
+.icon{
+    border-radius: 50%;
+}
+
+.favorites{ 
+    text-align: end;
+}
+
+/*以上がタイムラインのCSS*/
+
 .post{ 
-    margin-left:260px;
+    margin-left:280px;
     background-color:#ffffff;
     margin-top:10px;
-    }
+    text-align: center
+}
 
 .btn-circle-border-simple {
     display: inline-block;
@@ -34,15 +126,15 @@
     transition: .4s;
     }
       
-      .btn-circle-border-simple:hover {
-        background: #b3e1ff;
-      }
+.btn-circle-border-simple:hover {
+    background: #b3e1ff;
+}
 
 .detail{ 
     margin-left:260px;
     background-color:#ffffff;
     margin-top:10px;
-    }
+}
     
 .sidenav {
     display: block;
@@ -53,5 +145,21 @@
     overflow-x: hidden;
     padding-top: 0px;
     border-right: 0.5px solid #F5B6AF;
-    }
+    text-align: center
+}
    
+.mgl-20{
+    margin-left : 20px;
+}
+
+.mgl-20A{
+    margin-left : 20px;
+    margin-right: 60px;
+}
+
+.icon{
+    margin-left : 20px;
+    margin-top: 10px;
+    border-radius: 50%; 
+    overflow: hidden;
+}
