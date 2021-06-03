@@ -27,7 +27,9 @@
           <div class="icon">
             <%= image_tag t.user.image_url, size: "70x70" if t.user.image? %>
           </div>
-          <br><a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
+          <br>
+          <a href="/users/<%= t.user.id %>">
+          <%= t.user.name %></a>
           <%= t.created_at %>
           <end>
         </div>

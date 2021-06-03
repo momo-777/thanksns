@@ -1,31 +1,39 @@
 <div class="sign-in">
-  <h2>ログイン</h2>
-  <p>※登録したメールアドレスとパスワードを入力してください。</p>
+  <br>
+      <h3>ログイン</h3>
+      <p>※登録したメールアドレスとパスワードを入力してください。</p>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <h2>メール </h2><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <h2>パスワード </h2><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
+  <div class="box3">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <br>
       <div class="field">
-        <%= f.check_box :remember_me %>
-        <h2>保存する</h2>
+        <h4>メール </h4>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <br>
+
+      <div class="field">
+        <h4>パスワード </h4>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+      <br>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <h5>保存する</h5>
+        </div>
+      <% end %>
+
+      <br>
+      <div class="login-button">
+        <%= f.submit "ログイン" %>
       </div>
     <% end %>
+    <br>
+  </div>
 
-    <div class="actions">
-      <%= f.submit "ログイン" %>
-    </div>
-  <% end %>
-
-  <p>
+  <br>
   <%= link_to "未登録の方はこちら", new_user_registration_path %>
 
 </div>

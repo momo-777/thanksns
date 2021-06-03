@@ -1,20 +1,20 @@
 <div class="sidenav">
-  <%= link_to "タイムライン", chats_path %><hr>
+  <i class="fas fa-home"></i><%= link_to "タイムライン", chats_path %><hr>
   <br>
-  <%= link_to "新規投稿", new_chat_path %><hr>
+  <i class="fas fa-pen-fancy"></i><%= link_to "新規投稿", new_chat_path %><hr>
   <br>
   <% if user_signed_in? %>
-    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+    <i class="fas fa-user"></i><%= link_to "マイページ", user_path(current_user.id) %><hr>
   <% end %>
   <br>
-  <%= link_to "ユーザー検索", users_path %><hr>
+  <i class="fas fa-search-plus"></i><%= link_to "ユーザー検索", users_path %><hr>
   <br>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+  <i class="fas fa-sign-out-alt"></i><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
 </div>
 
-<div class="post">
+<div class="post-box">
   <h2>新規投稿</h2>
-
+  <br>
   <%= form_for @chat do |f| %>
     <div class="field">
       <%= f.label :感謝したい相手_※必須 %><br>
@@ -45,21 +45,19 @@
               <option value="#cdbbd3"></option>
             </datalist></label>
         </form>
-      <script>
-    var bgColor = document.getElementById('bgColor');
-  bgColor.onchange = function () {
-  document.getElementById('bgChenge').style.backgroundColor = this.value;
-  console.log('bgColor:'+this.value);
-}
-</script>
-
-    </div>
+    <script>
+        var bgColor = document.getElementById('bgColor');
+      bgColor.onchange = function () {
+      document.getElementById('bgChenge').style.backgroundColor = this.value;
+      console.log('bgColor:'+this.value);
+      }
+    </script>
 
     <br>
     <%= f.submit "投稿する" %>
     <br>
 
   <% end %>
-  <br>
-  <%= link_to "←back", chats_path %>
+    <br>
 </div>
+    <%= link_to "←back", chats_path %>

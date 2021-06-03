@@ -1,29 +1,37 @@
 <div class="sidenav">
-  <%= link_to "タイムライン", chats_path %><hr>
+  <i class="fas fa-home"></i><%= link_to "タイムライン", chats_path %><hr>
   <br>
-  <%= link_to "新規投稿", new_chat_path %><hr>
+  <i class="fas fa-pen-fancy"></i><%= link_to "新規投稿", new_chat_path %><hr>
   <br>
   <% if user_signed_in? %>
-    <%= link_to "マイページ", user_path(current_user.id) %><hr>
+    <i class="fas fa-user"></i><%= link_to "マイページ", user_path(current_user.id) %><hr>
   <% end %>
   <br>
-  <%= link_to "ユーザー検索", users_path %><hr>
+  <i class="fas fa-search-plus"></i><%= link_to "ユーザー検索", users_path %><hr>
   <br>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
+  <i class="fas fa-sign-out-alt"></i><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><hr>
 </div>
 
-<div class="user-search">
-  <h1>ユーザー検索</h1>
+<div class="user-search-box">
+  <br>
+  <h3>ユーザー検索</h3>
+  
+  <div class="search-list">
+    <br>
+    <div class="search-form">
+      <%= form_tag({controller:"users",action:"index"}, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索' %>
+      <% end %>
+    </div>
+    <div class="search-list2">
+      <br>
+      <% @users.each do |u| %>
+        <li><%= image_tag u.image_url, size: "50x50" if u.image? %><%= link_to u.name, user_path(u.id) %></li>
+      <% end %>
+    </div>
+  </div>
 
-  <%= form_tag({controller:"users",action:"index"}, method: :get) do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag '検索する'  %>
-  <% end %>
-
-  <% @users.each do |u| %>
-    <p><%= link_to u.name, user_path(u.id) %></p>
-  <% end %>
-
+  <br>
   <%= link_to "←back", chats_path %>
 </div>
-
