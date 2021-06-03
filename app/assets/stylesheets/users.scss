@@ -3,40 +3,38 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .sign-in{ 
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    margin: auto;
-    text-align: center;
-    width: 300px;
-    height: 70px;
-    font-family:"メイリオ"
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: auto;
+  text-align: center;
+  width: 300px;
+  height: 70px;
+  font-family:"メイリオ"
 }
 
 .box3{ 
-  
   margin: auto;
   text-align:center;
   border: solid 4px #F5B6AF;
   font-family:"メイリオ"
-  
 }
 
 .login-button{
-    display: inline-block;
-    padding: auto;
-    text-decoration: none;
-    background: #c7d866;/*ボタン色*/
-    color: #FFF;
-    border-bottom: solid 4px #c94c12;
-    border-radius: 3px;
-  }
-  .login-button:active {
-    /*ボタンを押したとき*/
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    border-bottom: none;/*線を消す*/
+  display: inline-block;
+  padding: auto;
+  text-decoration: none;
+  background: #c7d866;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #c94c12;
+  border-radius: 3px;
+}
+.login-button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
 }
 .sign-up{ 
   top: 0px;
@@ -44,7 +42,6 @@
   bottom: 0px;
   left: 0px;
   margin: auto;
-
   width: 300px;
   height: 70px;
   font-family:"メイリオ"
@@ -57,18 +54,16 @@
   font-family:"メイリオ"
 }
 
-
-
 .mypage-edit{
-    margin-left:280px;
-    background-color:#ffffff;
-    margin-top:10px;
-    font-family:"メイリオ"
+  margin-left:280px;
+  background-color:#ffffff;
+  margin-top:10px;
+  font-family:"メイリオ"
 }
 
-.search-form {
+/*.search-form {
     
-}
+}*/
 
 .user-search-box{ 
   margin-left:280px;
@@ -100,28 +95,28 @@
 .search-list li::before {
   position: absolute;
   content: "
-ul.cp_list {
-position: relative;
-padding: 0.5em;
-border: solid 1px #ec6d5e;
-list-style-type: none;
-}
-ul.cp_list li {
-padding: 0.5em 0 0.5em 1.4em;
-line-height: 1.5;
-border-bottom: 1px dashed #ec6d5e;
-}
-ul.cp_list li::before {
-position: absolute;
-content: "\002713";
-color: #ec6d5e;
-font-weight: bold;
-left : 0.5em;
-}
-ul.cp_list li:last-of-type {
-border-bottom: none;
-}
-2713";
+  search-list {
+  position: relative;
+  padding: 0.5em;
+  border: solid 1px #ec6d5e;
+  list-style-type: none;
+  }
+  search-list li {
+  padding: 0.5em 0 0.5em 1.4em;
+  line-height: 1.5;
+  border-bottom: 1px dashed #ec6d5e;
+  }
+  search-list li::before {
+  position: absolute;
+  content: "\002713";
+  color: #ec6d5e;
+  font-weight: bold;
+  left : 0.5em;
+  }
+  search-list li:last-of-type {
+  border-bottom: none;
+  }
+  2713";
   color: #AB47BC;
   font-weight: bold;
   left : 0.5em;
@@ -131,35 +126,72 @@ border-bottom: none;
   border-bottom: none;
 }
 
+.mypage-title{
+  text-align: center;
+  background-color:#ffffff;
+}
+
+.mypage-top{
+  margin-right: 400px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.profile{
+  position: relative;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px #F5B6AF;
+}
+
+.profile .title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -3px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  background: #F5B6AF;
+  color: #ffffff;
+  font-weight: normal;
+  border-radius: 5px 5px 0 0;
+}
+.profile p {
+  margin: 0; 
+  padding: 0;
+}
 
 .sidenav {
   display: block;
   height: 100%;
   width: 240px;
   position: fixed;
-  background-color: #F0F0F0;
+  background-color: #f8dfb1;
   overflow-x: hidden;
   padding-top: 0px;
   border-right: 0.5px solid #F5B6AF;
   }
 
-  .btn-gradient-radius {
-    display: inline-block;
-    padding: 7px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    color: #FFF;
-    background-image: linear-gradient(45deg, #4b91fa44 0%, #ff8b5f 100%);
-    transition: .4s;
-  }
-  
-  .btn-gradient-radius:hover {
-    background-image: linear-gradient(45deg, #1463da44 0%, #f75f27 100%);
-  }
+.btn-gradient-radius {
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #4b91fa44 0%, #ff8b5f 100%);
+  transition: .4s;
+}
 
-  .mypage-icon{
-    margin-left : 20px;
-    margin-top: 10px;
-    border-radius:0%; 
-    overflow: hidden;
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #1463da44 0%, #f75f27 100%);
+}
+
+.mypage-icon{
+  margin-left : 20px;
+  margin-top: 10px;
+  border-radius:0%; 
 }

@@ -24,8 +24,9 @@
         <%= submit_tag '検索' %>
       <% end %>
     </div>
+    <br>
+    <h4>---検索結果---</h4>
     <div class="search-list2">
-      <br>
       <% @users.each do |u| %>
         <li><%= image_tag u.image_url, size: "50x50" if u.image? %><%= link_to u.name, user_path(u.id) %></li>
       <% end %>

@@ -34,8 +34,8 @@
     
     <div class="field">
       <%= f.label :カードの色の選択_※任意 %><br>
-        <form class="sample" id="bgChenge">
-            <label><input type="color" name="ex" id="bgColor" list="exlist" value="#ddeaf6">
+        
+            <label><input type="color" name="chat[color]" id="bgColor" list="exlist" value="#ddeaf6">
             <datalist id="exlist">
               <option value="#ddd2aa"></option>
               <option value="#ffe3d5"></option>
@@ -44,14 +44,7 @@
               <option value="#5888bd"></option>
               <option value="#cdbbd3"></option>
             </datalist></label>
-        </form>
-    <script>
-        var bgColor = document.getElementById('bgColor');
-      bgColor.onchange = function () {
-      document.getElementById('bgChenge').style.backgroundColor = this.value;
-      console.log('bgColor:'+this.value);
-      }
-    </script>
+        
 
     <br>
     <%= f.submit "投稿する" %>
